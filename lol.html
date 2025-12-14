@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LoL 전략 시뮬레이션 센터 - (주)공부하자</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* LoL 페이지 전용 스타일 */
+    .lol-hero {
+      /* LoL/Blue-Purple 느낌의 그라데이션 */
+      background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15), transparent 70%); 
+      text-align: center;
+      padding: 60px 0;
+    }
+    .lol-badge {
+      /* LoL 로고 컬러 (골드 느낌) */
+      background: linear-gradient(135deg, #a79a78, #dbc77e); 
+      color: #0f1115; padding: 5px 12px; border-radius: 20px;
+      font-weight: 800; font-size: 12px; text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(219, 199, 126, 0.4);
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--muted); margin-bottom: 20px; font-size: 14px;
+    }
+    .back-btn:hover { color: #fff; text-decoration: underline; }
+
+    /* 레이아웃 그리드 (마구마구와 동일) */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .full-width-card {
+      grid-column: 1 / -1;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    /* 최근 경기 카드 스타일 */
+    .vs-match-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 25px;
+      margin-bottom: 12px;
+      transition: transform 0.2s;
+    }
+    .vs-match-row:hover { transform: translateY(-2px); background: rgba(255,255,255,0.05); }
+
+    .team-box { text-align: center; width: 30%; }
+    .team-name { font-size: 16px; margin-bottom: 4px; }
+    
+    /* 롤 팀 색상: 승리팀(블루) / 패배팀(레드) */
+    .team-blue { color: #3b82f6; } 
+    .team-red { color: #ff5e62; }
+    
+    .score-box { text-align: center; width: 40%; }
+    /* LoL은 KDA 또는 승패 자체를 점수로 띄울 수 있음 */
+    .score-text { font-size: 28px; font-weight: 800; color: #fff; letter-spacing: 2px; }
+    .match-place { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .match-date-badge { 
+      font-size: 10px; padding: 2px 6px; border-radius: 4px; 
+      background: rgba(255,255,255,0.1); color: #aaa; display:inline-block; margin-bottom:5px;
+    }
+
+    /* 승리자 강조 */
+    .winner { font-weight: 900; opacity: 1; transform: scale(1.05); display:inline-block;}
+    .loser { font-weight: 400; opacity: 0.5; }
+
+    /* 테이블 스타일 (style.css에서 불러옴) */
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">(주)공부하자</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html#team">구성원</a></li>
+          <li><a href="index.html#projects">다른 프로젝트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" style="padding-top: 40px;">
+      <a href="index.html" class="back-btn">← 메인으로 돌아가기</a>
+      
+      <section class="lol-hero">
+        <span class="lol-badge">Project No.01</span>
+        <h1 style="font-size: clamp(32px, 4vw, 48px); margin: 15px 0;">⚔️ League of Legends 전략 시뮬레이션 센터</h1>
+        <p style="color: var(--muted); max-width: 600px; margin: 0 auto;">
+          실시간 전략 전술 시뮬레이션 및 멘탈 단련 프로젝트.<br>
+          패배는 있어도 멘탈 파괴는 없다. (가끔 있다.)
+        </p>
+      </section>
+
+      <section id="overview">
+        <div class="about-grid">
+          
+          <div class="card">
+            <h3 style="color: var(--brand);">핵심 연구 목표 (Core Goals)</h3>
+            <ul style="color: var(--muted); padding-left: 20px; line-height: 1.8;">
+              <li><strong>팀워크 최적화:</strong> 4명이 던질 때 1명이 캐리하는 방법론 연구</li>
+              <li><strong>밴픽 전략:</strong> 상황별 OP 챔피언 선별 및 숙련도 향상</li>
+              <li><strong>운영 분석:</strong> '서렌 금지' 전략의 승률 기여도 분석</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="color: #ff5e62;">참여 연구원 (Full Roster)</h3>
+            <div class="participants" style="margin-top:15px;">
+              
+              <div style="display:flex; align-items:start; gap:12px; margin-bottom:15px; flex-wrap: wrap;">
+                  <div style="width: 45%;">
+                      <div style="font-weight:700; font-size:14px; color:#3b82f6;">문혁 (AD/SUP)</div>
+                      <div style="font-size:12px; color:var(--muted);">전술 기획 담당</div>
+                  </div>
+                  <div style="width: 45%;">
+                      <div style="font-weight:700; font-size:14px; color:#ff5e62;">신선민 (JG)</div>
+                      <div style="font-size:12px; color:var(--muted);">실무 총괄 책임</div>
+                  </div>
+                  <div style="width: 45%;">
+                      <div style="font-weight:700; font-size:14px; color:#3b82f6;">나형동 (TOP)</div>
+                      <div style="font-size:12px; color:var(--muted);">메인 탱킹 및 딜러</div>
+                  </div>
+                  <div style="width: 45%;">
+                      <div style="font-weight:700; font-size:14px; color:#ff5e62;">진원석 (MID)</div>
+                      <div style="font-size:12px; color:var(--muted);">전략 및 킬 보조</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="full-width-card">
+            <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:15px;">
+              <h3 style="margin:0; font-size:20px; color:#fff;">⚡️ 최근 경기 결과 (Recent Matches)</h3>
+              <span style="font-size:12px; color:var(--muted);">최신 3경기</span>
+            </div>
+            
+            <div id="recentMatchList">
+              <div style="text-align:center; padding:20px; color:var(--muted);">데이터 연동 준비 중...</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="records">
+        <div class="section-head" style="margin-bottom: 30px;">
+          <h2>📊 Full History</h2>
+          <p>구글 스프레드시트에 기록될 전체 전적 및 분석 데이터입니다.</p>
+        </div>
+
+        <div class="table-container">
+          <table id="lolTable">
+            <thead>
+              <tr id="tableHead"></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <div id="loading" style="text-align:center; padding:40px; color:var(--muted);">
+            데이터 로딩 대기 중... ⚔️
+          </div>
+        </div>
+        <div style="margin-top: 20px; text-align: right; font-size: 12px; color: var(--faint);">
+          * Data Source: Google Sheets
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="text-align:center; padding: 40px 0; color:var(--faint); font-size:12px;">
+      © 2025 (주)공부하자 LoL Strategy Lab.
+    </div>
+  </footer>
+
+  <script>
+    // ▼▼▼ 여기에 구글 시트 CSV 링크를 넣어주세요! ▼▼▼
+    const SHEET_CSV_URL = "여기에_새로운_LOL_시트_CSV_링크_넣기";
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+    // LoL 전용 열 인덱스 (엑셀 구조에 따라 나중에 수정해야 함)
+    const COL_DATE = 0;   // 날짜 (A열이라고 가정)
+    const COL_RESULT = 4; // 승패 (E열이라고 가정)
+    const COL_KILLS = 5;  // 킬 (F열이라고 가정)
+    const COL_DEATHS = 6; // 데스 (G열이라고 가정)
+    const COL_ASSISTS = 7; // 어시스트 (H열이라고 가정)
+
+    
+    async function loadSpreadsheet() {
+      const tableHead = document.getElementById("tableHead");
+      const tableBody = document.getElementById("tableBody");
+      const loading = document.getElementById("loading");
+      const recentList = document.getElementById("recentMatchList");
+
+      // 링크가 설정되지 않았으면 더미 데이터 표시
+      if (SHEET_CSV_URL.includes("여기에")) {
+          loading.textContent = "구글 시트 연동을 위해 링크를 넣어주세요.";
+          recentList.innerHTML = `
+              <div class="vs-match-row">
+                  <div class="team-box"><div class="team-name team-blue">승리</div></div>
+                  <div class="score-box"><div class="match-date-badge">YYYY-MM-DD</div><div class="score-text">DUMMY</div><div class="match-place">전략 연구</div></div>
+                  <div class="team-box"><div class="team-name team-red">패배</div></div>
+              </div>`;
+          return;
+      }
+
+      try {
+        const response = await fetch(SHEET_CSV_URL + "&t=" + Date.now());
+        const data = await response.text();
+
+        // CSV 파싱 (쉼표 문제 해결 버전) - (함수 생략, 실제 파일에는 마구마구에서 가져온 함수를 쓰세요)
+        const parseCSV = (text) => { /* ... 마구마구 파일에서 가져온 parseCSV 함수 내용 ... */ 
+            // 편의상 간단한 버전으로 대체
+            return text.split("\n").map(row => row.split(","));
+        };
+        const rows = parseCSV(data);
+
+        // [중요: 헤더 및 데이터 시작점 인덱스 조정 필요]
+        const HEADER_ROW_INDEX = 0; // 엑셀 구조에 따라 0, 1, 2 등으로 수정
+        const DATA_START_ROW = 1;   // 엑셀 구조에 따라 1, 2, 3 등으로 수정
+
+        // ... (이하 마구마구와 동일한 로직을 적용하여 테이블과 카드를 생성) ...
+        
+        // --- 3. 최근 전적 카드 생성 로직 (로직만 표시) ---
+        const cleanRows = rows.slice(DATA_START_ROW).filter(r => r.length > COL_RESULT && r[COL_RESULT] && r[COL_RESULT].trim().length > 0);
+        const recentMatches = [...cleanRows].reverse().slice(0, 3);
+        
+        recentList.innerHTML = '';
+        recentMatches.forEach(row => {
+            const date = row[COL_DATE] || "-";
+            const result = row[COL_RESULT] || "-";
+            const kda = `${row[COL_KILLS] || 0} / ${row[COL_DEATHS] || 0} / ${row[COL_ASSISTS] || 0}`;
+            
+            const isWin = result.includes("승") || result.includes("WIN");
+            const teamClass = isWin ? "team-blue" : "team-red";
+
+            recentList.innerHTML += `
+                <div class="vs-match-row">
+                    <div class="team-box">
+                        <div class="team-name ${isWin ? 'winner' : 'loser'} team-blue">BLUE TEAM</div>
+                    </div>
+                    <div class="score-box">
+                        <div class="match-date-badge">${date}</div>
+                        <div class="score-text">${isWin ? 'VICTORY' : 'DEFEAT'}</div>
+                        <div class="match-place">KDA: ${kda}</div>
+                    </div>
+                    <div class="team-box">
+                        <div class="team-name ${!isWin ? 'winner' : 'loser'} team-red">RED TEAM</div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // 테이블 채우기 및 로딩 숨김 처리
+        // ... (마구마구 파일에서 해당 로직을 복사하여 완성 필요) ...
+        loading.style.display = 'none';
+
+      } catch (e) {
+        loading.innerHTML = `오류: ${e.message}`;
+      }
+    }
+    loadSpreadsheet();
+  </script>
+</body>
+</html>
