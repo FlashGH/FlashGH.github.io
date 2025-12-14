@@ -125,39 +125,108 @@
             </ul>
           </div>
 
-          <div class="card">
-            <h3 style="color: #ff5e62;">참여 연구원 (Roster Breakdown)</h3>
+<div class="card full-width-card" style="grid-column: 1 / -1;">
+            <h3 style="color: #ff5e62; margin-bottom: 25px;">참여 연구원 상세 로스터 (The Roster)</h3>
             
-            <h4 style="color:#ddd; font-size:15px; border-bottom:1px solid var(--border); padding-bottom:5px; margin-top:0;">소환사의 협곡 (Summoner's Rift)</h4>
-            <div class="participants" style="margin-top:15px; margin-bottom:20px;">
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#3b82f6;">신선민 (MID):</span> 주챔 (제라스, 벡스)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#3b82f6;">나형동 (ADC/SUP):</span> 주챔 (미스포츈, 유미, 나미)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#ff5e62;">진원석 (TOP):</span> 주챔 (가렌, 세트)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#ff5e62;">문혁 (TOP):</span> 주챔 (이렐리아, 피오라, 아트록스)
-              </div>
-            </div>
+            <div class="team-grid" style="gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
 
-            <h4 style="color:#ddd; font-size:15px; border-bottom:1px solid var(--border); padding-bottom:5px;">칼바람 나락 (Howling Abyss)</h4>
+              <article class="id-card" style="padding: 15px;">
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:10px;">
+                    <img src="images/team/shinseonmin.jpg" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #3b82f6;" onerror="this.src='https://via.placeholder.com/50'">
+                    <div>
+                        <div class="name-row" style="margin:0;">
+                            <h4 class="name" style="font-size:18px;">신선민</h4>
+                            <span class="rank-tag rank-chief" style="background: #3b82f6; color:#fff;">전력분석관</span>
+                        </div>
+                        <span class="job-title" style="margin:0; color:var(--muted); font-size:12px;">주 포지션: 미드 (제라스, 벡스)</span>
+                    </div>
+                </div>
+                
+                <div class="info-list" style="border-top: 1px solid rgba(255,255,255,.08); padding-top:10px; gap:6px;">
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">점멸 위치:</span> F점멸
+                    </div>
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">스타일:</span> 안정적이고 기복이 매우 적은 AI 플레이
+                    </div>
+                </div>
+              </article>
+
+              <article class="id-card" style="padding: 15px;">
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:10px;">
+                    <img src="images/team/moonhyuk.jpg" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #ff5e62;" onerror="this.src='https://via.placeholder.com/50'">
+                    <div>
+                        <div class="name-row" style="margin:0;">
+                            <h4 class="name" style="font-size:18px;">문혁</h4>
+                            <span class="rank-tag rank-head" style="background: #ff5e62; color:#fff;">수석연구원</span>
+                        </div>
+                        <span class="job-title" style="margin:0; color:var(--muted); font-size:12px;">주 포지션: 탑 (이렐리아, 피오라)</span>
+                    </div>
+                </div>
+                
+                <div class="info-list" style="border-top: 1px solid rgba(255,255,255,.08); padding-top:10px; gap:6px;">
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">점멸 위치:</span> D점멸 (전술적 이유)
+                    </div>
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">스타일:</span> 불안한 하이리스크 하이리턴 (성장하면 괴물, 아니면 트롤)
+                    </div>
+                </div>
+              </article>
+
+              <article class="id-card" style="padding: 15px;">
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:10px;">
+                    <img src="images/team/nahyungdong.jpg" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #a855f7;" onerror="this.src='https://via.placeholder.com/50'">
+                    <div>
+                        <div class="name-row" style="margin:0;">
+                            <h4 class="name" style="font-size:18px;">나형동</h4>
+                            <span class="rank-tag rank-intern" style="background: #a855f7; color:#fff;">연구원</span>
+                        </div>
+                        <span class="job-title" style="margin:0; color:var(--muted); font-size:12px;">주 포지션: 원딜/서포터</span>
+                    </div>
+                </div>
+                
+                <div class="info-list" style="border-top: 1px solid rgba(255,255,255,.08); padding-top:10px; gap:6px;">
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">점멸 위치:</span> F점멸
+                    </div>
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">스타일:</span> 킬에 눈이 돌아가 킬딸을 자주 치는 **본능형 플레이 (롤을 개못함)**
+                    </div>
+                </div>
+              </article>
+
+              <article class="id-card" style="padding: 15px;">
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:10px;">
+                    <img src="images/team/jinwonseok.jpg" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #a855f7;" onerror="this.src='https://via.placeholder.com/50'">
+                    <div>
+                        <div class="name-row" style="margin:0;">
+                            <h4 class="name" style="font-size:18px;">진원석</h4>
+                            <span class="rank-tag rank-intern" style="background: #a855f7; color:#fff;">연구원</span>
+                        </div>
+                        <span class="job-title" style="margin:0; color:var(--muted); font-size:12px;">주 포지션: 탑 (가렌, 세트)</span>
+                    </div>
+                </div>
+                
+                <div class="info-list" style="border-top: 1px solid rgba(255,255,255,.08); padding-top:10px; gap:6px;">
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">점멸 위치:</span> F점멸
+                    </div>
+                    <div style="font-size: 13px; color: var(--text);">
+                        <span style="color: #facc15; font-weight:700;">스타일:</span> 탱커만 잡으면 묵직함. 하지만 그 외는 불안정.
+                    </div>
+                </div>
+              </article>
+            </div>
+            
+            <h4 style="color:#ddd; font-size:15px; border-bottom:1px solid var(--border); padding-bottom:5px; margin-top:30px;">칼바람 나락 특수 로스터</h4>
             <div class="participants" style="margin-top:15px;">
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#3b82f6;">신선민:</span> 역할 (원딜, AP 메이지)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#ff5e62;">진원석:</span> 역할 (탱커)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:900; color:#facc15;">나형동:</span> 역할 (<strong>똥가루 미스포츈, 불나방 녹턴, 펑크난 누누</strong>)
-              </div>
-              <div style="margin-bottom:8px;">
-                <span style="font-weight:700; color:#ff5e62;">문혁:</span> 역할 (AD 브루저)
-              </div>
+                <div style="margin-bottom:8px;">
+                    <span style="font-weight:700; color:#facc15;">나형동 특기:</span> <strong>똥가루 미스포츈, 불나방 녹턴, 펑크난 누누</strong> (예측불가)
+                </div>
+                <div style="margin-bottom:8px;">
+                    <span style="font-weight:700; color:#ddd;">문혁/신선민/진원석:</span> AP 메이지, 원딜, 탱커 등 챔프 풀 유동적으로 활용.
+                </div>
             </div>
           </div>
 
